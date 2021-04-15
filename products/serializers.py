@@ -17,7 +17,7 @@ class ProductSerializer(ModelSerializer):
         fields = '__all__'
 
     def get_image(self, obj):
-        return obj.image.build_url()
+        return obj.image.build_url(secure=True)
 
     def get_reviews(self, obj):
         product = Product.objects.get(id=obj.id)
